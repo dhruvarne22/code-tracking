@@ -4,7 +4,7 @@ from chromadb.utils.embedding_functions import OpenCLIPEmbeddingFunction
 from chromadb.utils.data_loaders import ImageLoader
 import os
 
-db_path=r"C:\Users\IdeaProjects\search_engine_youtube\image_vdb" #add your db path here
+db_path=r"carsImages" #add your db path here
 
 # Initialize Chroma DB client, embedding function, and data loader
 client = chromadb.PersistentClient(path=db_path)
@@ -18,15 +18,16 @@ collection = client.get_or_create_collection(
 )
 
 # Display the banner image
-banner_image_path = r"C:\Users\nachi\IdeaProjects\search_engine_youtube\img.png"  # Update with the path to your banner image
+banner_image_path = r"banner.png"  # Update with the path to your banner image
 st.image(banner_image_path, use_column_width=True)
 
 
 st.title("Vehicle Image Search Engine")
 
+
 # Search bar
 query = st.text_input("Enter your search query:")
-parent_path = r"C:\Users\IdeaProjects\search_engine_youtube\vehicle_images\train\images" #add your image folder path here
+parent_path = r"D:\\RealMeNarzo30A_Sep23_BKP\\DCIM\\Camera" #add your image folder path here
 if st.button("Search"):
     results = collection.query(query_texts=[query], n_results=5,include=["distances"])
     print(results)

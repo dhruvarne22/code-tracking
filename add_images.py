@@ -6,7 +6,7 @@ import numpy as np
 from tqdm import tqdm
 import os
 
-db_path=r"C:\Users\IdeaProjects\search_engine_youtube\image_vdb" #add your db path here
+db_path=r"D:\\QBR-Text-Image\\Text-based-image-retrieval-CLIP\\carsImages" #add your db path here
 # Initialize Chroma DB client, embedding function, and data loader
 
 client = chromadb.PersistentClient(path=db_path)
@@ -33,7 +33,7 @@ def add_images_to_collection(folder_path):
         except Exception as e:
             print(f"Error processing {image_path}: {e}")
 
-image_folder_path=r"C:\Users\IdeaProjects\search_engine_youtube\vehicle_images\train\images" #add your folder path here
+image_folder_path=r"D:\\RealMeNarzo30A_Sep23_BKP\\DCIM\\Camera" #add your folder path here
 
 add_images_to_collection(image_folder_path)
 
