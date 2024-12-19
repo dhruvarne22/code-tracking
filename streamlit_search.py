@@ -35,3 +35,5 @@ if st.button("Search"):
         image_path = os.path.join(parent_path, image_id)
         st.image(image_path, caption=os.path.basename(image_path))
         st.write(f"Distance: {distance}")
+
+print("Done")
